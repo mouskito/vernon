@@ -16,13 +16,6 @@ echo $prenom;
 echo $nom;
 
 echo '<br> <br>';
-/*
-test 
-vernon
-DISSI
-*/
-
-
 
 // LES CONCATENATIONS
 $fullname = $prenom.' '.$nom;

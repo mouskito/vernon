@@ -17,6 +17,8 @@ echo $nom;
 
 echo '<br> <br>';
 
+echo "Nous sommes le lundi";
+
 // LES CONCATENATIONS
 $fullname = $prenom.' '.$nom;
 echo $fullname;

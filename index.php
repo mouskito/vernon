@@ -1,5 +1,15 @@
 <?php
- 
+
+/**
+ * Les types de variables
+ * string: chaine de caratéres
+ * int: entier naturel
+ * float / double: nombres décimaux
+ * boolean: true / false ( vrai ou faux)
+ * array: tableau
+ * objet: reference Exemple new User()
+ */
+
     $nombre = 5;
     $tab = array(5,"test");
 

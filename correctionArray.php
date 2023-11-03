@@ -69,13 +69,18 @@ $etudiants = array(
         'prenom' => 'Moustakime', 
         'nom' => 'Kifia', 
         'moyenne' => 15,
+        ),
+    4 => array(
+        'prenom' => 'Homer', 
+        'nom' => 'Simson', 
+        'moyenne' => 15,
         )
     );
 
     foreach ($etudiants as $key => $value) {
     
         if ($value['moyenne'] > 9) {
-           echo " ".$value['prenom']. " est admis";
+           echo " ".$value['prenom']. " est admis avec une moyenne de ".$value['moyenne'];
            echo "<hr>";
         }
     }
@@ -86,8 +91,23 @@ $etudiants = array(
            echo "<hr>";
         }
     }
-?>
+
+    //Autre version avec ol/ul li
+
+    ?>
     <main>
+        <ol>
+            <?php 
+                foreach ($etudiants as $key => $value) {
+        
+                    if ($value['moyenne'] > 9) { 
+                        echo "<li>".$value['prenom']. " est admis avec une moyenne de ".$value['moyenne']." </li>";
+                    // echo " ".$value['prenom']. " est admis";
+                    // echo "<hr>";}
+                    }
+            }
+            ?>
+        </ol>
         
     </main>
 <?

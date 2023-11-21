@@ -28,7 +28,7 @@
         <input type="text" class="form-control" id="exampleInputEmail1" name="tel">
     </div>
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">envoyer</button>
     </form>
 </div>
     

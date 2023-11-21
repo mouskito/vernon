@@ -8,7 +8,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">prenomt</th>
+      <th scope="col">prenom</th>
       <th scope="col">nom</th>
       <th scope="col">email</th>
       <th scope="col">tel</th>

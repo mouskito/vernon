@@ -11,7 +11,7 @@ $users = $db->query("SELECT * FROM user")->fetchAll(PDO::FETCH_ASSOC);
       <th scope="col">Nom</th>
       <th scope="col">Email</th>
       <th scope="col">Tél</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +23,12 @@ $users = $db->query("SELECT * FROM user")->fetchAll(PDO::FETCH_ASSOC);
                 <td><?php echo $user["nom"] ?></td>
                 <td><?php echo $user["email"] ?></td>
                 <td><?php echo $user["tel"] ?></td>
+                <td>
+                    <a href="update.php?id=<?php echo $user["id"] ?>">Edit</a>
+
+                    Delete
+                </td>
+                
             </tr>
        <?php }
     ?>  

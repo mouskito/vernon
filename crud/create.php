@@ -4,14 +4,19 @@
     if (isset($_POST["submit"])) {
 
         $sql = $db->prepare(
-            "INSERT INTO user(prenom,nom,email,tel)
+            "INSERT INTO user(prenom,nom,email,pwd,tel)
                 VALUE
-            (:prenom,:nom,:email,:tel)"
+            (:prenom,:nom,:email,:pwd,:tel)"
         );
         
+        $password = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
+
         $sql->bindValue(":prenom",$_POST["prenom"]);
         $sql->bindValue(":nom",$_POST["nom"]);
         $sql->bindValue(":email",$_POST["email"]);
+        // md5("mon mot de passe")
+        $sql->bindValue(":pwd",$password);
+        // $sql->bindValue(":pwd",md5($_POST["pwd"]));
         $sql->bindValue(":tel",$_POST["tel"]);
 
 
@@ -44,8 +49,13 @@
    
   </div>
   <div class="col-md-6">
-    <label for="validationCustom03" class="form-label">Email</label>
-    <input type="text" class="form-control" id="validationCustom03"  required name="email">
+    <label for="validationCustom0" class="form-label">Email</label>
+    <input type="text" class="form-control" id="validationCustom0"  required name="email">
+   
+  </div>
+  <div class="col-md-6">
+    <label for="validationCustom03" class="form-label">Mot de passe</label>
+    <input type="password" class="form-control" id="validationCustom03"  required name="pwd">
    
   </div>
   <div class="col-md-6">

@@ -9,9 +9,6 @@ $user = $db->query($sql)->fetch(PDO::FETCH_ASSOC);
 //Update / Edit d'un user
 if (isset($_POST['update'])) {
 
-    var_dump($_POST["mon_id"]);
-
-
     $sql = $db->prepare(
         "
             UPDATE user SET prenom=:prenom, nom=:nom,email=:email, tel=:tel WHERE id =:id
@@ -22,11 +19,12 @@ if (isset($_POST['update'])) {
     $sql->bindValue(":nom", $_POST["nom"]);
     $sql->bindValue(":email", $_POST["email"]);
     $sql->bindValue(":tel", $_POST["tel"]);
-    $sql->bindValue(":id", $_GET['id']);
+    // $sql->bindValue(":id", $_GET['id']);
+    $sql->bindValue(":id",$_POST["mon_id"]);
 
     $sql->execute();
 
-    // header("Location:read.php");
+    header("Location:read.php");
 }
 
 ?>

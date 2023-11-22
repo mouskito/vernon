@@ -25,8 +25,7 @@ $users = $db->query("SELECT * FROM user")->fetchAll(PDO::FETCH_ASSOC);
                 <td><?php echo $user["tel"] ?></td>
                 <td>
                     <a href="update.php?id=<?php echo $user["id"] ?>">Edit</a>
-
-                    Delete
+                    <a href="delete.php?id=<?php echo $user["id"] ?>">Delete</a>
                 </td>
                 
             </tr>

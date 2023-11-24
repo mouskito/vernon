@@ -2,10 +2,6 @@
     include "header.php";
 
     if (isset($_POST["submit"]) && isset($_FILES['avatar']) ) {
-      echo "<pre>";
-      print_r($_POST);
-      echo "</pre>";
-      
       
         /** UPLOAD IMAGE */
 
@@ -33,7 +29,7 @@
         /** FIN UPLOAD IMAGE */
 
         //METTRE A JOUR LA BDD
-//ALTER TABLE `user` ADD `avatar` VARCHAR(250) NOT NULL AFTER `tel`;
+        //ALTER TABLE `user` ADD `avatar` VARCHAR(250) NOT NULL AFTER `tel`;
 
 
         $sql = $db->prepare(

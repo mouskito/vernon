@@ -21,7 +21,17 @@ $users = $db->query("SELECT * FROM user")->fetchAll(PDO::FETCH_ASSOC);
             ?>
             <tr>
                 <td>
-                  <img src="uploads/<?php echo $user["avatar"] ?>" alt="">
+                  <?php
+                    if ($user["avatar"] == null) {
+                    ?>
+                      <img src='https://placehold.co/200' alt=''>
+                      <?php
+                    }else{
+                      ?>
+                       <img src="uploads/<?php echo $user["avatar"] ?>" alt="" width="200" height="200">
+                    <?php
+                    }
+                  ?>
                   
                 </td>
                 <td><?php echo $user["prenom"] ?></td>

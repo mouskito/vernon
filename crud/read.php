@@ -7,6 +7,7 @@ $users = $db->query("SELECT * FROM user")->fetchAll(PDO::FETCH_ASSOC);
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">Avatar</th>
       <th scope="col">Prénom</th>
       <th scope="col">Nom</th>
       <th scope="col">Email</th>
@@ -19,6 +20,10 @@ $users = $db->query("SELECT * FROM user")->fetchAll(PDO::FETCH_ASSOC);
         foreach ($users as $user) {
             ?>
             <tr>
+                <td>
+                  <img src="uploads/<?php echo $user["avatar"] ?>" alt="">
+                  
+                </td>
                 <td><?php echo $user["prenom"] ?></td>
                 <td><?php echo $user["nom"] ?></td>
                 <td><?php echo $user["email"] ?></td>

@@ -1,4 +1,8 @@
 <?php
+  if (!isset($_SESSION)) {
+    session_start();
+  }
+
   require "db.php";
 ?>
 
@@ -33,6 +37,26 @@
               </li>
              
             </ul>
+            <?php
+            if (isset($_SESSION['user'])) {
+              
+              echo $_SESSION['user']['prenom']." ".$_SESSION['user']['nom'];
+              
+              echo "
+                <a href='logout.php'>Se deconnecter</a>
+              
+              ";
+            }else {
+              ?>
+            <a href="login.php">Se connecter</a>
+            <a href="create.php">S'inscrire'</a>
+
+          <?php
+            }
+
+            ?>
+
+        
           </div>
         </div>
       </nav>

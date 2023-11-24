@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include "header.php";
 
     if (isset($_POST['login'])) {
@@ -14,16 +16,23 @@ $sql->bindValue(":email",$_POST['email']);
 // SELECT * FROM user WHERE email LIKE "test@test.fr"
         $sql->execute();
 
-        $requete = $sql->fetch();
+        $result = $sql->fetch();
 
-        if (password_verify($_POST['pwd'], $requete['pwd'])) {
-            echo 'Le mot de passe est valide ! <br>';
+        if (password_verify($_POST['pwd'], $result['pwd'])) {
+            // echo 'Le mot de passe est valide ! <br>';
+            // $_SESSION['prenom_dans_session'] = $result['prenom'];
+            // $_SESSION['nom_dans_session'] = $result['nom'];
+
+          $_SESSION['user'] = $result;
+          // $_SESSION = $result;
+
+            header("Location:read.php");
+           
         } else {
             echo 'Le mot de passe est invalide <br> ';
         }
 
-        var_dump($requete['prenom']);
-        var_dump($_POST['pwd']);
+       
     }
 
 ?>
